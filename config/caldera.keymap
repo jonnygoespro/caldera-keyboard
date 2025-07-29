@@ -13,7 +13,7 @@
 // ---------------------------------------------------------------------------------
 // | ESC  |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  |      |
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  | BKSP |
-// | CAPS |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Ö  |  ENT |
+// | CAPS |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  OE |  ENT |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  -  | SHFT |
 // |      |     |CTRL | ALT | GUI | SPC |     | SPC | LOW |LARW |DARW |UARW | RARW |
                         bindings = <
@@ -27,13 +27,13 @@
                 lower_layer {
 // ------------------------------------------------------------------------------------------------------------
 // | ESC   |  BT1  |  BT2  |  BT3  |  BT4  |  BT5  |          |       |       |       |       |       |  BTCLR|
-// |       |   !   |   "   |   #   |   $   |   @   |          |   ^   |   %   | BSP   |   '   |   ?   |  BKSP |
-// |   ß   |   <   |   [   |   (   |   {   |   :   |          |   ;   |   }   |   )   |   ]   |   >   |  ENT  |
-// | SHFT  |   Ü   |   |   |   *   |   +   |   ~   |          |   =   |   -   |   ,   |   .   |   Ä   |  SHFT |
+// |       |   !   |   "   |   #   |   $   |   @   |          |   ^   |   %   |  slsh |   '   |   ?   |  BKSP |
+// |  SZT  |   <   |   [   |   (   |   {   |   :   |          |   ;   |   }   |   )   |   ]   |   >   |  ENT  |
+// | SHFT  |   UE  |   |   |   *   |   +   |   ~   |          |   =   |   -   |   ,   |   .   |   AE  |  SHFT |
 // |       |       |       |       |       |       |          |       |       |       |       |       |       |
                         bindings = <
    &kp ESC    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &none      &none       &none      &none     &none      &bt BT_CLR
-   &none      &kp EXCL      &kp DQT       &kp HASH      &kp DLR       &kp AT                 &kp CARET  &kp PERC    &kp SLSH   &kp QUOT  &kp QMARK  &none
+   &none      &kp EXCL      &kp DQT       &kp HASH      &kp DLLR      &kp AT                 &kp CARET  &kp PRCNT   &kp FSLH   &kp SQT   &kp QMARK  &none
    &none      &kp LT        &kp LBKT      &none         &kp LBRACE    &kp COLON              &kp SEMI   &kp RBRACE  &none      &kp RBKT  &kp GT     &kp RET
    &kp LSHFT  &none         &kp PIPE      &kp ASTRK     &kp PLUS      &kp TILDE              &kp EQUAL  &kp MINUS   &kp COMMA  &kp DOT   &none      &kp RSHFT
    &none      &none         &none         &none         &none         &none                  &none      &none       &none      &none     &none      &none
