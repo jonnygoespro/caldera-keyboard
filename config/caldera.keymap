@@ -4,9 +4,6 @@
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
-// not working: ö, MINUS (is ß right now), DQT (Ä right now), # (§ right now), @ (DQT right now), none of the braces works, ue, oe, szt, pipe, ast, plus, tilde
-// not working: &%-äö*=++
-
 
 / {
         keymap {
