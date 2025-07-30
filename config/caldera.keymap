@@ -8,7 +8,7 @@
             macro_at: macro_at {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
-                  bindings = <&kp ALT &kp L>;
+                  bindings = <&kp LALT &kp L>;
             };
       };
 };
