@@ -4,13 +4,13 @@
 #include "keys_de.h"
 
 / {
-  macros {
-    macro_at: macro_at {
-      compatible = "zmk,behavior-macro";
-      label = "AT SIGN";
-      bindings = <&kp RALT &kp L>;
-    };
-  };
+      macros {
+            macro_at: macro_at {
+                  compatible = "zmk,behavior-macro";
+                  #binding-cells = <0>;
+                  bindings = <&kp RALT &kp L>;
+            };
+      };
 };
 
 / {
