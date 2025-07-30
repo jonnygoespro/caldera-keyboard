@@ -62,11 +62,11 @@
 // | SHFT  |   UE  |   |   |   *   |   +   |   ~   |          |   =   |   -   |   ,   |   .   |   AE  |  SHFT |
 // |       |       |       |       |       |       |          |       |       |       |       |       |       |
                         bindings = <
-   &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1         &bt BT_SEL 2             &bt BT_SEL 3       &bt BT_SEL 4           &none         &none               &none                     &none                 &none            &bt BT_CLR
-   &kp DE_EURO  &macro_at        &kp DE_DQT           &kp DE_HASH              &kp DE_DLLR        &kp DE_EXCL            &kp QZ_QMARK  &kp DE_PRCNT        &kp DE_FSLH               &kp DE_SQT            &kp QZ_CARET     &kp BSPC
-   &kp DE_SZ    &macro_lt        &kp QZ_LEFT_BRACKET  &kp QZ_LEFT_PARENTHESIS  &kp QZ_LEFT_BRACE  &kp DE_COLON           &kp DE_SEMI   &kp QZ_RIGHT_BRACE  &kp QZ_RIGHT_PARENTHESIS  &kp QZ_RIGHT_BRACKET  &macro_gt        &kp RET
-   &kp LSHFT    &kp DE_U_UMLAUT  &kp QZ_PIPE          &kp DE_ASTRK             &kp DE_PLUS        &macro_tilde           &kp DE_EQUAL  &kp DE_MINUS        &kp COMMA                 &kp DOT               &kp DE_A_UMLAUT  &kp RSHFT
-   &none        &none            &none                &none                    &none              &none                  &none         &none               &none                     &none                 &none            &none
+   &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1         &bt BT_SEL 2             &bt BT_SEL 3       &bt BT_SEL 4           &none         &none               &none                     &none                 &none             &bt BT_CLR
+   &kp DE_EURO  &macro_at        &kp DE_DQT           &kp DE_HASH              &kp DE_DLLR        &kp DE_EXCL            &kp QZ_QMARK  &kp DE_PRCNT        &kp DE_FSLH               &kp DE_SQT            &kp QZ_CARET      &kp BSPC
+   &kp DE_SZ    &kp LESS_THAN    &kp QZ_LEFT_BRACKET  &kp QZ_LEFT_PARENTHESIS  &kp QZ_LEFT_BRACE  &kp DE_COLON           &kp DE_SEMI   &kp QZ_RIGHT_BRACE  &kp QZ_RIGHT_PARENTHESIS  &kp QZ_RIGHT_BRACKET  &kp GREATER_THAN  &kp RET
+   &kp LSHFT    &kp DE_U_UMLAUT  &kp QZ_PIPE          &kp DE_ASTRK             &kp DE_PLUS        &macro_tilde           &kp DE_EQUAL  &kp DE_MINUS        &kp COMMA                 &kp DOT               &kp DE_A_UMLAUT   &kp RSHFT
+   &none        &none            &none                &none                    &none              &none                  &none         &none               &none                     &none                 &none             &none
                         >;
                 };
         };
