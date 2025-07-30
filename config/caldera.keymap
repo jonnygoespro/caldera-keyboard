@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include "keys_de.h"
 
+#define LESS_THAN (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN)))
+
 / {
       macros {
             macro_at: macro_at {
@@ -14,7 +16,7 @@
             macro_lt: macro_lt {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
-                  bindings = <&text "<">;
+                  bindings = <&kp LESS_THAN>;
             };
       };
 };
