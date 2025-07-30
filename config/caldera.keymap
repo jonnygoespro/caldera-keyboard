@@ -4,27 +4,12 @@
 #include "keys_de.h"
 #include "qwertz_macros.h"
 
-#define DE_LT_WORKAROUND (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN)))
-#define DE_GT_WORKAROUND (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN)))
-
 / {
       macros {
             macro_at: macro_at {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
                   bindings = <&kp RA(L)>;
-            };
-
-            macro_lt: macro_lt {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&kp DE_LT_WORKAROUND>;
-            };
-
-            macro_gt: macro_gt {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&kp DE_GT_WORKAROUND>;
             };
 
             macro_tilde: macro_tilde {
