@@ -23,19 +23,19 @@
             macro_lbkt: macro_lbkt {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
-                  bindings = <&kp RA(5)>;
+                  bindings = <&kp LA(5)>;
             };
 
             macro_lpar: macro_lpar {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
-                  bindings = <&kp RS(8)>;
+                  bindings = <&kp RS(DE_8)>;
             };
 
             macro_lbrc: macro_lbrc {
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
-                  bindings = <&kp RA(8)>;
+                  bindings = <&kp LA(8)>;
             };
       };
 };
