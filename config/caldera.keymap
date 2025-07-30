@@ -2,8 +2,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include "keys_de.h"
+#include "qwertz_macros.h"
 
-#define LESS_THAN (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN)))
 
 / {
       macros {
@@ -11,31 +11,6 @@
                   compatible = "zmk,behavior-macro";
                   #binding-cells = <0>;
                   bindings = <&kp RA(L)>;
-            };
-
-            // not working
-            macro_lt: macro_lt {
-                  compatible = "zmk,behavior-macro";
-                  #binding-cells = <0>;
-                  bindings = <&kp LESS_THAN>;
-            };
-
-            macro_lbkt: macro_lbkt {
-                  compatible = "zmk,behavior-macro";
-                  #binding-cells = <0>;
-                  bindings = <&kp LA(5)>;
-            };
-
-            macro_lpar: macro_lpar {
-                  compatible = "zmk,behavior-macro";
-                  #binding-cells = <0>;
-                  bindings = <&kp RS(DE_8)>;
-            };
-
-            macro_lbrc: macro_lbrc {
-                  compatible = "zmk,behavior-macro";
-                  #binding-cells = <0>;
-                  bindings = <&kp LA(8)>;
             };
       };
 };
@@ -68,11 +43,11 @@
 // | SHFT  |   UE  |   |   |   *   |   +   |   ~   |          |   =   |   -   |   ,   |   .   |   AE  |  SHFT |
 // |       |       |       |       |       |       |          |       |       |       |       |       |       |
                         bindings = <
-   &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4           &none         &none         &none        &none        &none            &bt BT_CLR
-   &kp DE_EURO  &kp DE_EXCL      &kp DE_DQT    &kp DE_HASH   &kp DE_DLLR   &macro_at              &kp DE_CARET  &kp DE_PRCNT  &kp DE_FSLH  &kp DE_SQT   &kp QMARK        &kp BSPC
-   &kp DE_SZ    &macro_lt        &macro_lbkt   &macro_lpar   &macro_lbrc   &kp DE_COLON           &kp DE_SEMI   &kp DE_RBRC   &kp DE_RPAR  &kp DE_RBKT  &kp DE_GT        &kp RET
-   &kp LSHFT    &kp DE_U_UMLAUT  &kp DE_PIPE   &kp DE_ASTRK  &kp DE_PLUS   &kp DE_TILDE           &kp DE_EQUAL  &kp DE_MINUS  &kp COMMA    &kp DOT      &kp DE_A_UMLAUT  &kp RSHFT
-   &none        &none            &none         &none         &none         &none                  &none         &none         &none        &none        &none            &none
+   &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2          &bt BT_SEL 3    &bt BT_SEL 4           &none         &none         &none        &none        &none            &bt BT_CLR
+   &kp DE_EURO  &kp DE_EXCL      &kp DE_DQT        &kp DE_HASH           &kp DE_DLLR     &macro_at              &kp DE_CARET  &kp DE_PRCNT  &kp DE_FSLH  &kp DE_SQT   &kp QMARK        &kp BSPC
+   &kp DE_SZ    &QZ_GT           &QZ_LEFT_BRACKET  &QZ_LEFT_PARENTHESIS  &QZ_LEFT_BRACE  &kp DE_COLON           &kp DE_SEMI   &kp DE_RBRC   &kp DE_RPAR  &kp DE_RBKT  &kp DE_GT        &kp RET
+   &kp LSHFT    &kp DE_U_UMLAUT  &kp DE_PIPE       &kp DE_ASTRK          &kp DE_PLUS     &kp DE_TILDE           &kp DE_EQUAL  &kp DE_MINUS  &kp COMMA    &kp DOT      &kp DE_A_UMLAUT  &kp RSHFT
+   &none        &none            &none             &none                 &none           &none                  &none         &none         &none        &none        &none            &none
                         >;
                 };
         };
