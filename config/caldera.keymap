@@ -5,61 +5,81 @@
 #include "qwertz_macros.h"
 
 / {
-      macros {
-            macro_at: macro_at {
-                  compatible = "zmk,behavior-macro";
-                  #binding-cells = <0>;
-                  bindings = <&kp RA(L)>;
-            };
+    macros {
+        macro_at: macro_at {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(L)>;
+        };
 
-            macro_tilde: macro_tilde {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&kp LA(N)>;
-            };
+        macro_tilde: macro_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(N)>;
+        };
 
-            macro_gt: macro_gt {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&kp LS(GRAVE)>;
-            };
-      };
+        macro_gt: macro_gt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(GRAVE)>;
+        };
+    };
 };
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-// ╭──────┬─────┬─────┬─────┬─────┬─────╮     ╭──────┬─────┬─────┬─────┬─────┬─────╮
-// │ ESC  │  1  │  2  │  3  │  4  │  5  │     |  6  |  7  |  8  |  9  |  0  |      |
-// │ TAB  │  Q  │  W  │  E  │  R  │  T  │     |  Y  |  U  |  I  |  O  |  P  | BKSP |
-// │ CAPS │  A  │  S  │  D  │  F  │  G  │     |  H  |  J  |  K  |  L  |  OE |  ENT |
-// │ SHFT │  Z  │  X  │  C  │  V  │  B  │     |  N  |  M  |  ,  |  .  |  -  | SHFT |
-// │      │     │CTRL │ ALT │ GUI │ SPC │     | SPC | LOW |LARW |DARW |UARW | RARW |
-// ╰──────┴─────┴─────┴─────┴─────┴─────╯     ╰──────┴─────┴─────┴─────┴─────┴─────╯
-                        bindings = <
-   &kp ESC      &kp N1    &kp N2     &kp N3     &kp N4     &kp N5               &kp N6     &kp N7  &kp N8     &kp N9    &kp N0           &none
-   &kp TAB      &kp Q     &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U   &kp I      &kp O     &kp P            &kp BSPC
-   &kp CAPS     &kp A     &kp S      &kp D      &kp F      &kp G                &kp H      &kp J   &kp K      &kp L     &kp DE_O_UMLAUT  &kp RET
-   &kp LSHFT    &kp Z     &kp X      &kp C      &kp V      &kp B                &kp N      &kp M   &kp COMMA  &kp DOT   &kp MINUS        &kp RSHFT
-   &none        &none     &kp LCTRL  &kp LALT   &kp LGUI   &kp SPACE            &kp SPACE  &mo 1   &kp LEFT   &kp DOWN  &kp UP           &kp RIGHT
-                        >;
-                };
-                lower_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | ESC   |  BT1  |  BT2  |  BT3  |  BT4  |  BT5  |          |       |       |       |       |       |  BTCLR|
-// |   €   |   @   |   "   |   #   |   $   |   !   |          |   ?   |   %   |  slsh |   '   |   ^   |  BKSP |
-// |  SZT  |   <   |   [   |   (   |   {   |   :   |          |   ;   |   }   |   )   |   ]   |   >   |  ENT  |
-// | SHFT  |   UE  |   |   |   *   |   +   |   ~   |          |   =   |   -   |   ,   |   .   |   AE  |  SHFT |
-// |       |       |       |       |       |       |          |       |       |       |       |       |       |
-                        bindings = <
-   &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1         &bt BT_SEL 2             &bt BT_SEL 3       &bt BT_SEL 4           &none         &none               &none                     &none                 &none             &bt BT_CLR
-   &kp DE_EURO  &macro_at        &kp DE_DQT           &kp DE_HASH              &kp DE_DLLR        &kp DE_EXCL            &kp QZ_QMARK  &kp DE_PRCNT        &kp DE_FSLH               &kp DE_SQT            &kp QZ_CARET      &kp BSPC
-   &kp DE_SZ    &kp GRAVE        &kp QZ_LEFT_BRACKET  &kp QZ_LEFT_PARENTHESIS  &kp QZ_LEFT_BRACE  &kp DE_COLON           &kp DE_SEMI   &kp QZ_RIGHT_BRACE  &kp QZ_RIGHT_PARENTHESIS  &kp QZ_RIGHT_BRACKET  &macro_gt         &kp RET
-   &kp LSHFT    &kp DE_U_UMLAUT  &kp QZ_PIPE          &kp DE_ASTRK             &kp DE_PLUS        &macro_tilde           &kp DE_EQUAL  &kp DE_MINUS        &kp COMMA                 &kp DOT               &kp DE_A_UMLAUT   &kp RSHFT
-   &none        &none            &none                &none                    &none              &none                  &none         &none               &none                     &none                 &none             &none
-                        >;
-                };
+//      ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
+//      │ ESC   │   1   │   2   │   3   │   4   │   5   │     │   6   │   7   │   8   │   9   │   0   │       │
+//      │ TAB   │   Q   │   W   │   E   │   R   │   T   │     │   Y   │   U   │   I   │   O   │   P   │ BKSP  │
+//      │ CAPS  │   A   │   S   │   D   │   F   │   G   │     │   H   │   J   │   K   │   L   │   OE  │  ENT  │
+//      │ SHFT  │   Z   │   X   │   C   │   V   │   B   │     │   N   │   M   │   ,   │   .   │   -   │ SHFT  │
+//      │       │       │ CTRL  │  ALT  │  GUI  │  SPC  │     │  SPC  │  LOW  │ LARW  │ DARW  │ UARW  │ RARW  │
+//      ╰───────┴───────┴───────┴───────┴───────┴───────╯     ╰───────┴───────┴───────┴───────┴───────┴───────╯
+        default_layer {
+            bindings = <
+                &kp ESC      &kp N1    &kp N2     &kp N3     &kp N4     &kp N5               &kp N6     &kp N7  &kp N8     &kp N9    &kp N0           &none
+                &kp TAB      &kp Q     &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U   &kp I      &kp O     &kp P            &kp BSPC
+                &kp CAPS     &kp A     &kp S      &kp D      &kp F      &kp G                &kp H      &kp J   &kp K      &kp L     &kp DE_O_UMLAUT  &kp RET
+                &kp LSHFT    &kp Z     &kp X      &kp C      &kp V      &kp B                &kp N      &kp M   &kp COMMA  &kp DOT   &kp MINUS        &kp RSHFT
+                &none        &none     &kp LCTRL  &kp LALT   &kp LGUI   &kp SPACE            &kp SPACE  &mo 1   &kp LEFT   &kp DOWN  &kp UP           &kp RIGHT
+            >;
         };
+
+//      ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
+//      │  ESC  │  BT1  │  BT2  │  BT3  │  BT4  │  BT5  │     │       │       │       │       │       │ BTCLR │
+//      │   €   │   @   │   "   │   #   │   $   │   !   │     │   ?   │   %   │ SLSH  │   '   │   ^   │ BKSP  │
+//      │ SZTT  │   <   │   [   │   (   │   {   │   :   │     │   ;   │   }   │   )   │   ]   │   >   │  ENT  │
+//      │ SHFT  │  UE   │   |   │   *   │   +   │   ~   │     │   =   │   -   │   ,   │   .   │  AE   │ SHFT  │
+//      │       │       │       │       │  LOW  │       │     │       │       │       │       │       │       │
+//      ╰───────┴───────┴───────┴───────┴───────┴───────╯     ╰───────┴───────┴───────┴───────┴───────┴───────╯
+        lower_layer {
+            bindings = <
+                &kp ESC      &bt BT_SEL 0     &bt BT_SEL 1         &bt BT_SEL 2             &bt BT_SEL 3       &bt BT_SEL 4           &none         &none               &none                     &none                 &none             &bt BT_CLR
+                &kp DE_EURO  &macro_at        &kp DE_DQT           &kp DE_HASH              &kp DE_DLLR        &kp DE_EXCL            &kp QZ_QMARK  &kp DE_PRCNT        &kp DE_FSLH               &kp DE_SQT            &kp QZ_CARET      &kp BSPC
+                &kp DE_SZ    &kp GRAVE        &kp QZ_LEFT_BRACKET  &kp QZ_LEFT_PARENTHESIS  &kp QZ_LEFT_BRACE  &kp DE_COLON           &kp DE_SEMI   &kp QZ_RIGHT_BRACE  &kp QZ_RIGHT_PARENTHESIS  &kp QZ_RIGHT_BRACKET  &macro_gt         &kp RET
+                &kp LSHFT    &kp DE_U_UMLAUT  &kp QZ_PIPE          &kp DE_ASTRK             &kp DE_PLUS        &macro_tilde           &kp DE_EQUAL  &kp DE_MINUS        &kp COMMA                 &kp DOT               &kp DE_A_UMLAUT   &kp RSHFT
+                &none        &none            &none                &none                    &mo 2              &none                  &none         &none               &none                     &none                 &none             &none
+
+            >;
+        };
+
+//      ╭───────┬───────┬───────┬───────┬───────┬───────╮     ╭───────┬───────┬───────┬───────┬───────┬───────╮
+//      │       │       │       │       │       │       │     │       │       │       │       │       │       │
+//      │       │       │       │       │       │       │     │       │       │       │       │       │       │
+//      │       │   1   │   2   │   3   │   4   │   5   │     │   6   │   7   │   8   │   9   │   0   │       │
+//      │       │       │       │       │       │       │     │       │       │       │       │       │       │
+//      │       │       │       │       │       │       │     │       │       │       │       │       │       │
+//      ╰───────┴───────┴───────┴───────┴───────┴───────╯     ╰───────┴───────┴───────┴───────┴───────┴───────╯
+        num_layer {
+            bindings = <
+                &none    &none    &none    &none    &none    &none        &none    &none    &none    &none    &none    &none
+                &none    &none    &none    &none    &none    &none        &none    &none    &none    &none    &none    &none
+                &none    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5       &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &none
+                &none    &none    &none    &none    &none    &none        &none    &none    &none    &none    &none    &none
+                &none    &none    &none    &none    &none    &none        &none    &none    &none    &none    &none    &none
+            >;
+        };
+    };
 };
